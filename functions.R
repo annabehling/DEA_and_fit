@@ -71,7 +71,7 @@ parental_DE <- function(expr_data, parent_1 ,parent_2){
   mod
 }
 
-# function to fit parental/hybrid regression models from DESeq (modified from hyliter)
+# function to fit parental/hybrid DESeq2 results (modified from hyliter)
 fit_and_classify <- function(mod, parent_1, parent_2, cutoff, min_p){ 
   #mod : output of parental_DE() or hybrid_DE()
   #parent_1 : name of one parental species - keep constant across functions
@@ -124,4 +124,10 @@ gene_cats <- function(parent_fit, hybrid_fit, parent_1, parent_2, results_dir, s
   }
   
   classes_df
+}
+
+#make a dataframe with only classified genes (i.e. no 'NA' genes)
+get_nonNA <- function(classes_df){
+  #classes_df : output dataframe from gene_cats()
+  classes_df[(!is.na(classes_df$parent_class_h) & !is.na(classes_df$parent_class_p)), ] #only rows that had non-NA result from both DEAs
 }
