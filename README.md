@@ -81,6 +81,8 @@ An example output file can be found at `files/sub_classes_df.txt`.
 
 ## Checks
 
+
+
 ## Acknowledgements
 
-David Winter/hyliter
+Thank you to [David Winter](https://github.com/dwinter "github.com/dwinter") for the [hyliter](https://github.com/dwinter/hyliter "github.com/dwinter/hyliter") code and assistance with its implementation.
