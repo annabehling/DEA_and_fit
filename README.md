@@ -15,7 +15,7 @@ Cox, M.P., T. Dong, G. Shen, Y. Dalvi, D.B. Scott and A.R.D. Ganley. 2014. An in
 
 ## Description
 
-This code takes the read count matrices outputted by [HyLiTE](https://hylite.sourceforge.io/) analyses, performs differential expression analyses, fits the regression models, and classifies each gene into one of the four gene expression categories or NA.
+This code takes the read count matrices outputted by [HyLiTE](https://hylite.sourceforge.io/) analyses, performs differential expression analyses (DEA), fits the regression models, and classifies each gene into one of the four gene expression categories or NA.
 
 The majority of functions were taken from [hyliter](https://github.com/dwinter/hyliter), sometimes with modifications made specific for this project. Where applicable, this has been commented in the R code file.
 
@@ -75,7 +75,20 @@ To remove the genes that did not get a classification (due to an 'NA' result in 
 sub_classes_df <- get_nonNA(classes_df)
 ```
 
-An example output file can be found at `files/sub_classes_df.txt`.
+## Output structure
+
+When the above code has been run to completion, it will output a dataframe called `sub_classes_df`.
+
+An example of what this dataframe should look like can be found in this repository under `files/sub_classes_df.txt`.
+
+The dataframe consists of:
+* Six columns, with the headings:
+..* parent_class_p (the gene class assigned from the parental DEA)
+..* log2FC_p (the log2(fold change) in gene expression from the parental DEA)
+..* parent_class_h (the gene class assigned from the hybrid DEA)
+..* log2FC_h (the log2(fold change) in gene expression from the hybrid DEA)
+..* gene_id (the genes that had a non-NA result from both DEAs)
+..* classification (the gene expression category assigned to each gene)
 
 ## Acknowledgements
 
