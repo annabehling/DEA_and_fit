@@ -1,6 +1,17 @@
 # DEA_and_fit
 
-write about expression classes, intro
+Given the extent of variability in genetic complements across Eukarya, the cross-kingdom comparison of gene expression patterns cannot be as simple as comparing read count matrices from representative systems. It is possible to instead combine the results of the parental [parent gene vs parent gene] and hybrid [parentally-derived gene copy vs parentally-derived gene copy] differential expression analysis results to form four expression categories that can be compared across kingdoms.
+
+Briefly, these expression categories are:
+
+1. Parental expression inheritance (PEI): any parental bias (or lack thereof) is maintained in the hybrid.
+2. Homeolog expression blending (HEBl): a parental expression bias is lost in the hybrid.
+3. Homeolog expression bias (HEBi): a hybrid expression bias has arisen from no parental bias.
+4. Homeolog expression reversal (HER): an expression bias in the parents is reversed in the hybrid.
+
+More information on these classes can be found in the following publication:
+
+Cox, M.P., T. Dong, G. Shen, Y. Dalvi, D.B. Scott and A.R.D. Ganley. 2014. An interspecific fungal hybrid reveals cross-kingdom rules for allopolyploid gene expression patterns. *PLoS Genetics* 10: e1004180. [https://doi.org/10.1371/journal.pgen.1004180](https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1004180)
 
 ## Description
 
@@ -47,11 +58,11 @@ parent_DEA_res <- parental_DE(exp_file_HH_p, parent_1 = "G_raimondii", parent_2 
 The, to identify differentially expressed genes, run:
 ```{r}
 #hybrid
-parent_classes <- fit_and_classify(parent_DEA_res, parent_1 = "G_raimondii", parent_2 = "G_arboreum", 
+hybrid_classes <- fit_and_classify(hybrid_DEA_res, parent_1 = "G_raimondii", parent_2 = "G_arboreum", 
                                    cutoff=1, min_p = 0.05)
 
 #parental
-hybrid_classes <- fit_and_classify(hybrid_DEA_res, parent_1 = "G_raimondii", parent_2 = "G_arboreum", 
+parent_classes <- fit_and_classify(parent_DEA_res, parent_1 = "G_raimondii", parent_2 = "G_arboreum", 
                                    cutoff=1, min_p = 0.05)
 ```
 
