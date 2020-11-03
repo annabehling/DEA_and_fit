@@ -42,16 +42,14 @@ First load the functions.
 source("functions.R")
 ```
 
-The next step is to read in the hybrid and parental read count data, and perform the two differential expression analyses.
-
-Assuming you are in the directory containing the HyLiTE read count files, run:
+The next step is to read in the hybrid and parental read count data, and perform the two differential expression analyses. To do so, run:
 ```{r}
 #hybrid
-hybrid_DEA_res <- hybrid_DE(results_dir = ".", species = "HH_p", include_N = TRUE, 
+hybrid_DEA_res <- hybrid_DE(results_dir = "./files", species = "HH_p", include_N = TRUE, 
                             parent_1 = "G_raimondii", parent_2 = "G_arboreum")
 
 #parental
-exp_file_HH_p <- read_exp_file(results_dir = ".", species = "HH_p")
+exp_file_HH_p <- read_exp_file(results_dir = "./files", species = "HH_p")
 parent_DEA_res <- parental_DE(exp_file_HH_p, parent_1 = "G_raimondii", parent_2 = "G_arboreum")
 ```
 
@@ -69,7 +67,7 @@ parent_classes <- fit_and_classify(parent_DEA_res, parent_1 = "G_raimondii", par
 Lastly, to classify each gene into one of the four expression categories, run:
 ```{r}
 classes_df <- gene_cats(parent_classes, hybrid_classes, parent_1 = "G_raimondii", parent_2 = "G_arboreum", 
-                        results_dir = ".", species = "HH_p")
+                        results_dir = "./files", species = "HH_p")
 ```
 
 To remove the genes that did not get a classification (due to an 'NA' result in one or both of the differential expression analyses) in the above table, run:
@@ -78,10 +76,6 @@ sub_classes_df <- get_nonNA(classes_df)
 ```
 
 An example output file can be found at `files/sub_classes_df.txt`.
-
-## Checks
-
-
 
 ## Acknowledgements
 
