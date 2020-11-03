@@ -81,14 +81,14 @@ When the above code has been run to completion, it will output a dataframe calle
 
 An example of what this dataframe should look like can be found in this repository under `files/sub_classes_df.txt`.
 
-The dataframe consists of:
-* Six columns, with the headings:
-..* parent_class_p (the gene class assigned from the parental DEA)
-..* log2FC_p (the log2(fold change) in gene expression from the parental DEA)
-..* parent_class_h (the gene class assigned from the hybrid DEA)
-..* log2FC_h (the log2(fold change) in gene expression from the hybrid DEA)
-..* gene_id (the genes that had a non-NA result from both DEAs)
-..* classification (the gene expression category assigned to each gene)
+The dataframe consists of six columns, with the headings:
+
+1. parent_class_p (the gene class assigned from the parental DEA)
+2. log2FC_p (the log2(fold change) in gene expression from the parental DEA)
+3. parent_class_h (the gene class assigned from the hybrid DEA)
+4. log2FC_h (the log2(fold change) in gene expression from the hybrid DEA)
+5. gene_id (the genes that had a non-NA result from both DEAs)
+6. classification (the gene expression category assigned to each gene)
 
 ## Acknowledgements
 
