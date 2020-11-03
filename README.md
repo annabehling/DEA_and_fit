@@ -4,10 +4,10 @@ Given the extent of variability in genetic complements across Eukarya, the cross
 
 Briefly, these expression categories are:
 
-1. Parental expression inheritance (PEI): any parental bias (or lack thereof) is maintained in the hybrid.
-2. Homeolog expression blending (HEBl): a parental expression bias is lost in the hybrid.
-3. Homeolog expression bias (HEBi): a hybrid expression bias has arisen from no parental bias.
-4. Homeolog expression reversal (HER): an expression bias in the parents is reversed in the hybrid.
+1. **Parental expression inheritance** (PEI): any parental bias (or lack thereof) is maintained in the hybrid.
+2. **Homeolog expression blending** (HEBl): a parental expression bias is lost in the hybrid.
+3. **Homeolog expression bias** (HEBi): a hybrid expression bias has arisen from no parental bias.
+4. **Homeolog expression reversal** (HER): an expression bias in the parents is reversed in the hybrid.
 
 More information on these classes can be found in the following publication:
 
@@ -83,12 +83,12 @@ An example of what this dataframe should look like can be found in this reposito
 
 The dataframe consists of six columns, with the headings:
 
-1. parent_class_p (the gene class assigned from the parental DEA)
-2. log2FC_p (the log2(fold change) in gene expression from the parental DEA)
-3. parent_class_h (the gene class assigned from the hybrid DEA)
-4. log2FC_h (the log2(fold change) in gene expression from the hybrid DEA)
-5. gene_id (the genes that had a non-NA result from both DEAs)
-6. classification (the gene expression category assigned to each gene)
+1. **parent_class_p**: the gene class assigned from the parental DEA
+2. **log2FC_p**: the log2(fold change) in gene expression from the parental DEA
+3. **parent_class_h**: the gene class assigned from the hybrid DEA
+4. **log2FC_h**: the log2(fold change) in gene expression from the hybrid DEA
+5. **gene_id**: the genes that had a non-NA result from both DEAs
+6. **classification**: the gene expression category assigned to each gene
 
 ## Acknowledgements
 
