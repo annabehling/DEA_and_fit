@@ -71,7 +71,7 @@ parental_DE <- function(expr_data, parent_1 ,parent_2){
   mod
 }
 
-# function to fit parental/hybrid DESeq2 results (modified from hyliter)
+# function to fit parental/hybrid DESeq2 results (modified from hyliter), classify where there is a bias in parental origin
 fit_and_classify <- function(mod, parent_1, parent_2, cutoff, min_p){ 
   #mod : output of parental_DE() or hybrid_DE()
   #parent_1 : name of one parental species - keep constant across functions
@@ -93,12 +93,14 @@ gene_cats <- function(parent_fit, hybrid_fit, parent_1, parent_2, results_dir, s
   #parent_2 : name of second parental species - keep constant across functions
   #results_dir : path to directory containing HyLiTE expression.txt file
   #species : specific file identifier in case the directory contains output files from multiple HyLiTE runs
-  classes_df <- cbind(as.data.frame(parent_fit$parent_class), as.data.frame(parent_fit$log2FoldChange),
-                      as.data.frame(hybrid_fit$parent_class), as.data.frame(hybrid_fit$log2FoldChange)) #make a df with only relevant columns
+  classes_df <- cbind(as.data.frame(parent_fit$parent_class), as.data.frame(parent_fit$log2FoldChange), as.data.frame(parent_fit$padj),
+                      as.data.frame(hybrid_fit$parent_class), as.data.frame(hybrid_fit$log2FoldChange), as.data.frame(hybrid_fit$padj)) #make a df with only relevant columns
   names(classes_df)[1] <- "parent_class_p"
   names(classes_df)[2] <- "log2FC_p"
-  names(classes_df)[3] <- "parent_class_h"
-  names(classes_df)[4] <- "log2FC_h"
+  names(classes_df)[3] <- "padj_p"
+  names(classes_df)[4] <- "parent_class_h"
+  names(classes_df)[5] <- "log2FC_h"
+  names(classes_df)[6] <- "padj_h"
   
   exp_file <- read_exp_file(results_dir, species) #read in expression file to get gene ids (these are in same order as the classes_df table) 
   classes_df$gene_id <- exp_file$GENE
@@ -106,7 +108,7 @@ gene_cats <- function(parent_fit, hybrid_fit, parent_1, parent_2, results_dir, s
   classes_df$classification <- ""
   for(i in 1:nrow(classes_df)){
     message(i)
-    if( any(is.na(classes_df[i,c(1, 3)]))){
+    if( any(is.na(classes_df[i,c(1, 4)]))){
       classes_df$classification[i] <- NA #not possible to compare NA (no data?) to classification, so pass on NA to final result
     } 
     else if(classes_df$parent_class_p[i] == classes_df$parent_class_h[i]){
