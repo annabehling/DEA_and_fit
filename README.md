@@ -37,7 +37,7 @@ This example code uses files from a HyLiTE analysis on a homoploid plant hybrid 
 
 The assignment of **parent_1** and **parent_2** are arbitrary, but should be kept constant at every point throughout the code.
 
-First load the functions.
+First load the functions:
 ```{r}
 source("functions.R")
 ```
@@ -53,7 +53,7 @@ exp_file_HH_p <- read_exp_file(results_dir = "./files", species = "HH_p")
 parent_DEA_res <- parental_DE(exp_file_HH_p, parent_1 = "G_raimondii", parent_2 = "G_arboreum")
 ```
 
-The, to identify differentially expressed genes, run:
+Then, to identify differentially expressed genes, run:
 ```{r}
 #hybrid
 hybrid_classes <- fit_and_classify(hybrid_DEA_res, parent_1 = "G_raimondii", parent_2 = "G_arboreum", 
@@ -81,14 +81,16 @@ When the above code has been run to completion, it will output a dataframe calle
 
 An example of what this dataframe should look like can be found in this repository under `files/sub_classes_df.txt`.
 
-The dataframe consists of six columns, with the headings:
+The dataframe consists of eight columns, with the headings:
 
 1. **parent_class_p**: the gene class assigned from the parental DEA
 2. **log2FC_p**: the log2(fold change) in gene expression from the parental DEA
-3. **parent_class_h**: the gene class assigned from the hybrid DEA
-4. **log2FC_h**: the log2(fold change) in gene expression from the hybrid DEA
-5. **gene_id**: the genes that had a non-NA result from both DEAs
-6. **classification**: the gene expression category assigned to each gene
+3. **padj_p** : the adjusted *p* value from the parental DEA
+4. **parent_class_h**: the gene class assigned from the hybrid DEA
+5. **log2FC_h**: the log2(fold change) in gene expression from the hybrid DEA
+6. **padj_h** : the adjusted *p* value from the hybrid DEA
+7. **gene_id**: the genes that had a non-NA result from both DEAs
+8. **classification**: the gene expression category assigned to each gene
 
 ## Acknowledgements
 
