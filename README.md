@@ -1,17 +1,20 @@
 # DEA_and_fit
 
-Given the extent of variability in genetic complements across Eukarya, the cross-kingdom comparison of gene expression patterns cannot be as simple as comparing read count matrices from representative systems. It is possible to instead combine the results of the parental [parent gene vs parent gene] and hybrid [parentally-derived gene copy vs parentally-derived gene copy] differential expression analysis results to form four expression categories that can be compared across kingdoms.
+Given the extent of variability in genetic complements across Eukarya, the cross-kingdom comparison of gene expression patterns cannot be as simple as comparing read count matrices from representative systems. It is possible to instead combine the results of the parental [parent gene vs parent gene] and hybrid [parentally-derived gene copy vs parentally-derived gene copy] differential expression analysis results to form five expression categories that can be compared across kingdoms.
 
 Briefly, these expression categories are:
 
-1. **Parental expression inheritance** (PEI): any parental bias (or lack thereof) is maintained in the hybrid.
-2. **Homeolog expression blending** (HEBl): a parental expression bias is lost in the hybrid.
-3. **Homeolog expression bias** (HEBi): a hybrid expression bias has arisen from no parental bias.
-4. **Homeolog expression reversal** (HER): an expression bias in the parents is reversed in the hybrid.
+1. **Parental differential expression inheritance** (PEI de): a parental expression bias is maintained in the hybrid.
+2. **Parental equal expression inheritance** (PEI eq) : equal parental expression is inherited as such by the hybrid.
+3. **Homeolog expression blending** (HEBl): a parental expression bias is lost in the hybrid.
+4. **Homeolog expression bias** (HEBi): a hybrid expression bias has arisen from no parental bias.
+5. **Homeolog expression reversal** (HER): an expression bias in the parents is reversed in the hybrid.
 
-More information on these classes can be found in the following publication:
+More information on these classes can be found in the following publications:
 
 Cox, M.P., T. Dong, G. Shen, Y. Dalvi, D.B. Scott and A.R.D. Ganley. 2014. An interspecific fungal hybrid reveals cross-kingdom rules for allopolyploid gene expression patterns. *PLoS Genetics* 10: e1004180. [https://doi.org/10.1371/journal.pgen.1004180](https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1004180)
+
+Yoo, M.J., Szadkowski, E., & Wendel, J.F. 2013. Homeolog expression bias and expression level dominance in allopolyploid cotton. *Heredity* 110: 171-180. [https://doi.org/10.1038/hdy.2012.94](https://www.nature.com/articles/hdy201294)
 
 ## Description
 
