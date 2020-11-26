@@ -111,8 +111,12 @@ gene_cats <- function(parent_fit, hybrid_fit, parent_1, parent_2, results_dir, s
     if( any(is.na(classes_df[i,c(1, 4)]))){
       classes_df$classification[i] <- NA #not possible to compare NA (no data?) to classification, so pass on NA to final result
     } 
-    else if(classes_df$parent_class_p[i] == classes_df$parent_class_h[i]){
-      classes_df$classification[i] <- "PEI" #covers 3 conditions where expression is Parental Expression Inheritance
+    else if(classes_df$parent_class_p[i] == "equal" & classes_df$parent_class_h[i] == "equal"){
+      classes_df$classification[i] <- "PEI eq" #covers 1 condition where expression is Parental Equal Expression Inheritance
+    }
+    else if ((classes_df$parent_class_p[i] == parent_1 & classes_df$parent_class_h[i] == parent_1) | 
+             (classes_df$parent_class_p[i] == parent_2 & classes_df$parent_class_h[i] == parent_2)){
+      classes_df$classification[i] <- "PEI de" #covers 2 conditions where expression is Parental Differential Expression Inheritance
     }
     else if((classes_df$parent_class_p[i] == parent_1 | classes_df$parent_class_p[i] == parent_2) & classes_df$parent_class_h[i] == "equal"){
       classes_df$classification[i] <- "HEBl" #covers 2 conditions where expression is Homeolog Expression Blending
