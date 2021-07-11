@@ -1,11 +1,11 @@
 # DEA_and_fit
 
-Given the extent of variability in genetic complements across Eukarya, the cross-kingdom comparison of gene expression patterns cannot be as simple as comparing read count matrices from representative systems. It is possible to instead combine the results of the parental [parent gene vs parent gene] and hybrid [parentally-derived gene copy vs parentally-derived gene copy] differential expression analysis results to form five expression categories that can be compared across kingdoms.
+Given the extent of variability in the genetic complements of species across Eukarya, the cross-kingdom comparison of gene expression patterns cannot be as simple as comparing read count matrices from representative systems. It is possible to instead combine the results of the parental [parent gene vs parent gene] and hybrid [parentally-derived gene copy vs parentally-derived gene copy] differential expression analyses results to form five expression categories that can be compared across kingdoms.
 
 Briefly, these expression categories are:
 
 1. **Parental differential expression inheritance** (PEI de): a parental expression bias is maintained in the hybrid.
-2. **Parental equal expression inheritance** (PEI eq) : equal parental expression is inherited as such by the hybrid.
+2. **Parental equal expression inheritance** (PEI eq) : equal parental expression is inherited by the hybrid.
 3. **Homeolog expression blending** (HEBl): a parental expression bias is lost in the hybrid.
 4. **Homeolog expression bias** (HEBi): a hybrid expression bias has arisen from no parental bias.
 5. **Homeolog expression reversal** (HER): an expression bias in the parents is reversed in the hybrid.
@@ -18,7 +18,7 @@ Yoo, M.J., Szadkowski, E., & Wendel, J.F. 2013. Homeolog expression bias and exp
 
 ## Description
 
-This code takes the read count matrices outputted by [HyLiTE](https://hylite.sourceforge.io/) analyses, performs differential expression analyses (DEA), fits the regression models, and classifies each gene into one of the four gene expression categories or NA.
+This code takes the read count matrices outputted by [HyLiTE](https://hylite.sourceforge.io/) analyses, performs differential expression analyses (DEA), fits the regression models, and classifies each gene into one of the five gene expression categories or NA.
 
 The majority of functions were taken from [hyliter](https://github.com/dwinter/hyliter), sometimes with modifications made specific for this project. Where applicable, this has been commented in the R code file.
 
@@ -67,7 +67,7 @@ parent_classes <- fit_and_classify(parent_DEA_res, parent_1 = "G_raimondii", par
                                    cutoff=1, min_p = 0.05)
 ```
 
-Lastly, to classify each gene into one of the four expression categories, run:
+Lastly, to classify each gene into one of the five expression categories, run:
 ```{r}
 classes_df <- gene_cats(parent_classes, hybrid_classes, parent_1 = "G_raimondii", parent_2 = "G_arboreum", 
                         results_dir = "./files", species = "HH_p")
@@ -87,10 +87,10 @@ An example of what this dataframe should look like can be found in this reposito
 The dataframe consists of eight columns, with the headings:
 
 1. **parent_class_p**: the gene class assigned from the parental DEA
-2. **log2FC_p**: the log2(fold change) in gene expression from the parental DEA
+2. **log2FC_p**: the log2 fold change in gene expression from the parental DEA
 3. **padj_p** : the adjusted *p* value from the parental DEA
 4. **parent_class_h**: the gene class assigned from the hybrid DEA
-5. **log2FC_h**: the log2(fold change) in gene expression from the hybrid DEA
+5. **log2FC_h**: the log2 fold change in gene expression from the hybrid DEA
 6. **padj_h** : the adjusted *p* value from the hybrid DEA
 7. **gene_id**: the genes that had a non-NA result from both DEAs
 8. **classification**: the gene expression category assigned to each gene
