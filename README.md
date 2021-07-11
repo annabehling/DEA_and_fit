@@ -95,6 +95,21 @@ The dataframe consists of eight columns, with the headings:
 7. **gene_id**: the genes that had a non-NA result from both DEAs
 8. **classification**: the gene expression category assigned to each gene
 
+## Additional data availability
+
+In addition to the read count matrices provided for the above example, all parental and hybrid HyLiTE read count matrices used in the analysis of all representative systems in the associated research project are available [here](https://github.com/annabehling/DEA_and_fit/tree/master/all_count_matrices "all_count_matrices").
+
+The `all_count_matrices/` folder contains one parental and two replicate hybrid count matrices for a representative system from each of:
+
+* **allopolyploid fungi** (file prefix allo_f)
+* **homoploid hybrid fungi** (file prefix HH_f)
+* **allopolyploid plants** (file prefix allo_p)
+* **homoploid hybrid plants** (file prefix HH_p)
+* **allopolyploid animals** (file prefix allo_a)
+* **homoploid hybrid animals** (file prefix HH_a)
+
+More information about the raw genomic and RNA-seq data used to generate these read count matrices can be found [here].
+
 ## Acknowledgements
 
 Thank you to [David Winter](https://github.com/dwinter "github.com/dwinter") for the [hyliter](https://github.com/dwinter/hyliter "github.com/dwinter/hyliter") code and assistance with its implementation.
