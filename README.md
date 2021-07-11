@@ -95,18 +95,53 @@ The dataframe consists of eight columns, with the headings:
 7. **gene_id**: the genes that had a non-NA result from both DEAs
 8. **classification**: the gene expression category assigned to each gene
 
+## Next steps
+
+### Identifying genes with extremely differential expression
+
+A gene with a fold change > 50 in either the parental or hybrid differential expression analysis is considered extremely differentially expressed.
+
+First load the functions:
+```{r}
+source("ede_transgressive.R")
+```
+
+Then, to identify all extremely differentially expressed genes, run:
+```{r}
+get_EDEs(sub_classes_df)
+```
+
+Alternatively, to identify only the extremely differentially expressed parental genes, run:
+```{r}
+get_par_EDEs(sub_classes_df)
+```
+
+Or only the extremely differentially expressed hybrid genes, run:
+```{r}
+get_hyb_EDEs(sub_classes_df)
+```
+
+### Identifying genes with transgressive expression
+
+Transgressive expression is defined as mean hybrid expression greater than two times the highest (parent 1 or parent 2) mean parental expression, or less than half of the lowest (parent 1 or parent 2) mean parental expression.
+
+To identify all genes with transgressive expression, run:
+```{r}
+get_transgressives(exp_file_HH_p, sub_classes_df)
+```
+
 ## Additional data availability
 
 In addition to the read count matrices provided for the above example, all parental and hybrid HyLiTE read count matrices used in the analysis of all representative systems in the associated research project are available [here](https://github.com/annabehling/DEA_and_fit/tree/master/all_count_matrices "all_count_matrices").
 
 The `all_count_matrices/` folder contains one parental and two replicate hybrid count matrices for a representative system from each of:
 
-* **allopolyploid fungi** (file prefix allo_f)
-* **homoploid hybrid fungi** (file prefix HH_f)
-* **allopolyploid plants** (file prefix allo_p)
-* **homoploid hybrid plants** (file prefix HH_p)
-* **allopolyploid animals** (file prefix allo_a)
-* **homoploid hybrid animals** (file prefix HH_a)
+* **allopolyploid fungi** (file prefix 'allo_f')
+* **homoploid hybrid fungi** (file prefix 'HH_f')
+* **allopolyploid plants** (file prefix 'allo_p')
+* **homoploid hybrid plants** (file prefix 'HH_p')
+* **allopolyploid animals** (file prefix 'allo_a')
+* **homoploid hybrid animals** (file prefix 'HH_a')
 
 More information about the raw genomic and RNA-seq data used to generate these read count matrices can be found [here].
 
