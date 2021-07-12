@@ -36,7 +36,7 @@ The important output files for the following analyses are the `expression.txt` a
 
 ## Usage
 
-This example code uses files from a HyLiTE analysis on a homoploid plant hybrid derived from the parental species *Gossypium raimondii* and *G. arboreum*. These can be found in the `files/` folder.
+This example code uses files from a HyLiTE analysis on a homoploid plant hybrid derived from the parental species *Gossypium raimondii* and *G. arboreum*. These can be found in the `example_files/` folder.
 
 The assignment of **parent_1** and **parent_2** are arbitrary, but should be kept constant at every point throughout the code.
 
@@ -48,11 +48,11 @@ source("functions.R")
 The next step is to read in the hybrid and parental read count data, and perform the two differential expression analyses. To do so, run:
 ```{r}
 #hybrid
-hybrid_DEA_res <- hybrid_DE(results_dir = "./files", species = "HH_p", include_N = TRUE, 
+hybrid_DEA_res <- hybrid_DE(results_dir = "./example_files", species = "HH_p", include_N = TRUE, 
                             parent_1 = "G_raimondii", parent_2 = "G_arboreum")
 
 #parental
-exp_file_HH_p <- read_exp_file(results_dir = "./files", species = "HH_p")
+exp_file_HH_p <- read_exp_file(results_dir = "./example_files", species = "HH_p")
 parent_DEA_res <- parental_DE(exp_file_HH_p, parent_1 = "G_raimondii", parent_2 = "G_arboreum")
 ```
 
@@ -70,7 +70,7 @@ parent_classes <- fit_and_classify(parent_DEA_res, parent_1 = "G_raimondii", par
 Lastly, to classify each gene into one of the five expression categories, run:
 ```{r}
 classes_df <- gene_cats(parent_classes, hybrid_classes, parent_1 = "G_raimondii", parent_2 = "G_arboreum", 
-                        results_dir = "./files", species = "HH_p")
+                        results_dir = "./example_files", species = "HH_p")
 ```
 
 To remove the genes that did not get a classification (due to an 'NA' result in one or both of the differential expression analyses) in the above table, run:
@@ -82,7 +82,7 @@ sub_classes_df <- get_nonNA(classes_df)
 
 When the above code has been run to completion, it will output a dataframe called `sub_classes_df`.
 
-An example of what this dataframe should look like can be found in this repository under `files/sub_classes_df.txt`.
+An example of what this dataframe should look like can be found in this repository under `example_files/sub_classes_df.txt`.
 
 The dataframe consists of eight columns, with the headings:
 
