@@ -147,6 +147,8 @@ The `all_count_matrices/` folder contains one parental and two replicate hybrid 
 
 More information about the raw genomic and RNA-seq data used to generate these read count matrices can be found [here].
 
+There is also a `functions_usage.R` file that contains the usage of the `functions.R` code on all of the additional available data in `all_count_matrices/`.
+
 ## Acknowledgements
 
 Thank you to [David Winter](https://github.com/dwinter "github.com/dwinter") for the [hyliter](https://github.com/dwinter/hyliter "github.com/dwinter/hyliter") code and assistance with its implementation.
