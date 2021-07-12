@@ -21,10 +21,10 @@ sub_classes_df_allo_f <- get_nonNA(classes_df_allo_f)
 ## homoploid hybrid fungi
 
 # reading in read count data
-hybrid_mod_hh_f <- hybrid_DE("~/Desktop/research/frozen_data/hylite/", "single_end_test", include_N = TRUE, 
-                             parent_1 = "S_paradoxus", parent_2 = "S_cerevisiae") #hybrid
+hybrid_mod_hh_f <- hybrid_DE("~/Desktop/research/frozen_data/hylite/", "HH_f", include_N = TRUE, 
+                             parent_1 = "S_paradoxus", parent_2 = "HH_f") #hybrid
 
-exp_file_hh_f <- read_exp_file("~/Desktop/research/frozen_data/hylite/", "single_end_test") #parent
+exp_file_hh_f <- read_exp_file("~/Desktop/research/frozen_data/hylite/", "HH_f") #parent
 parent_mod_hh_f <- parental_DE(exp_file_hh_f, parent_1 = "S_paradoxus", parent_2 = "S_cerevisiae")
 
 # identify differentially expressed genes
@@ -32,7 +32,7 @@ parent_classes_hh_f <- fit_and_classify(parent_mod_hh_f, parent_1 = "S_paradoxus
 hybrid_classes_hh_f <- fit_and_classify(hybrid_mod_hh_f, parent_1 = "S_paradoxus", parent_2 = "S_cerevisiae", cutoff=1, min_p = 0.05)
 
 classes_df_hh_f <- gene_cats(parent_classes_hh_f, hybrid_classes_hh_f, parent_1 = "S_paradoxus", parent_2 = "S_cerevisiae", 
-                             results_dir = "~/Desktop/research/frozen_data/hylite/", species = "single_end_test")
+                             results_dir = "~/Desktop/research/frozen_data/hylite/", species = "HH_f")
 
 # exclude genes with very low coverage
 sub_classes_df_hh_f <- get_nonNA(classes_df_hh_f)
