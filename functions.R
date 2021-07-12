@@ -132,7 +132,7 @@ gene_cats <- function(parent_fit, hybrid_fit, parent_1, parent_2, results_dir, s
   classes_df
 }
 
-#make a dataframe with only classified genes (i.e. no 'NA' genes)
+# make a dataframe with only classified genes (i.e. no 'NA' genes)
 get_nonNA <- function(classes_df){
   #classes_df : output dataframe from gene_cats()
   classes_df[(!is.na(classes_df$parent_class_h) & !is.na(classes_df$parent_class_p)), ] #only rows that had non-NA result from both DEAs
