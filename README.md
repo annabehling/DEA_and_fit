@@ -18,7 +18,7 @@ Yoo, M.J., Szadkowski, E., & Wendel, J.F. 2013. Homeolog expression bias and exp
 
 ## Description
 
-This code takes the read count matrices outputted by [HyLiTE](https://hylite.sourceforge.io/) analyses, performs differential expression analyses (DEA), fits the regression models, and classifies each gene into one of the five gene expression categories or NA.
+This code takes the read count matrices outputted by [HyLiTE](https://hylite.sourceforge.io/) analyses, performs differential expression analyses (DEA), fits the regression models, and classifies each gene into one of the five gene expression categories or NA. The code has been tested to work on R version 4.0.3.
 
 The majority of functions were taken from [hyliter](https://github.com/dwinter/hyliter), sometimes with modifications made specific for this project. Where applicable, this has been commented in the R code file.
 
