@@ -151,7 +151,10 @@ fit_and_classify_IF <- function(mod, parent_1, parent_2, cutoff, min_p){
   data.frame(fit, parent_class)
 }
 
+## usage
+
 ## testing the arbitrariness of the parental definition
+# the resulting category counts should be the same irrespective of parental assignment
 
 # where G. raimondii == parent 1 and G. arboreum == parent 2
 # reading in read count data
@@ -168,12 +171,12 @@ hybrid_classes_hh_p <- fit_and_classify(hybrid_mod_hh_p, parent_1 = "G_raimondii
 classes_df_hh_p <- gene_cats(parent_classes_hh_p, hybrid_classes_hh_p, parent_1 = "G_raimondii", parent_2 = "G_arboreum", 
                              results_dir = "~/Desktop/research/frozen_data/hylite/", species = "HH_p")
 
-table(classes_df_hh_p$classification)
+table(classes_df_hh_p$classification) #resulting category count data
 #HEBi   HEBl    HER PEI de PEI eq 
 #721    920     28    159   7714
 
 
-#where G. arboreum == parent 1 and G. raimondii == parent 2
+# where G. arboreum == parent 1 and G. raimondii == parent 2
 # reading in read count data
 hybrid_mod_hh_p_2 <- hybrid_DE("~/Desktop/research/frozen_data/hylite/", "HH_p", include_N = TRUE, 
                              parent_1 = "G_arboreum", parent_2 = "G_raimondii") #hybrid
@@ -188,17 +191,18 @@ hybrid_classes_hh_p_2 <- fit_and_classify(hybrid_mod_hh_p_2, parent_1 = "G_arbor
 classes_df_hh_p_2 <- gene_cats(parent_classes_hh_p_2, hybrid_classes_hh_p_2, parent_1 = "G_arboreum", parent_2 = "G_raimondii", 
                              results_dir = "~/Desktop/research/frozen_data/hylite/", species = "HH_p")
 
-table(classes_df_hh_p_2$classification)
+table(classes_df_hh_p_2$classification) #resulting category count data == table(classes_df_hh_p_2$classification)
 #HEBi   HEBl    HER PEI de PEI eq 
 #721    920     28    159   7714
 
 
 ## testing the extraneous effects of no independent filtering
+# the DESeq2 results (except adj. p) should be the same with and without independent filtering
 
 # identify differentially expressed genes, using independent filtering
 parent_classes_hh_p_IF <- fit_and_classify_IF(parent_mod_hh_p, parent_1 = "G_raimondii", parent_2 = "G_arboreum", cutoff=1, min_p = 0.05)
 hybrid_classes_hh_p_IF <- fit_and_classify_IF(hybrid_mod_hh_p, parent_1 = "G_raimondii", parent_2 = "G_arboreum", cutoff=1, min_p = 0.05)
 
-# check that of the DESEQ2 differential expression analysis results columns, no values except the adjusted p values have changed
+# check that of the DESeq2 differential expression analysis results columns, no values except the adjusted p values have changed
 all(parent_classes_hh_p[, c(1:5)] == parent_classes_hh_p_IF[, c(1:5)], na.rm = TRUE) #TRUE
 all(hybrid_classes_hh_p[, c(1:5)] == hybrid_classes_hh_p_IF[, c(1:5)], na.rm = TRUE) #TRUE
