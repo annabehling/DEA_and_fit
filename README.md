@@ -97,16 +97,18 @@ The dataframe consists of eight columns, with the headings:
 
 ## Next steps
 
-### Identifying genes with extremely differential expression
+Further analyses can be perfomed on the output dataframe, `sub_classes_df`. These include identifying genes with extreme differential expression or transgressive expression.
 
-A gene with a fold change > 50 in either the parental or hybrid differential expression analysis is considered extremely differentially expressed.
-
-First load the functions:
+First load the following additional functions:
 ```{r}
 source("ede_transgressive.R")
 ```
 
-Then, to identify all extremely differentially expressed genes, run:
+### Identifying genes with extreme differential expression
+
+A gene with a fold change > 50 in either the parental or hybrid differential expression analysis is considered extremely differentially expressed.
+
+To identify all extremely differentially expressed genes, run:
 ```{r}
 get_EDEs(sub_classes_df)
 ```
@@ -116,7 +118,7 @@ Alternatively, to identify only the extremely differentially expressed parental 
 get_par_EDEs(sub_classes_df)
 ```
 
-Or only the extremely differentially expressed hybrid genes, run:
+Or, to identify only the extremely differentially expressed hybrid genes, run:
 ```{r}
 get_hyb_EDEs(sub_classes_df)
 ```
@@ -132,7 +134,7 @@ get_transgressives(exp_file_HH_p, sub_classes_df)
 
 ## Additional data availability
 
-In addition to the read count matrices provided for the above example, all parental and hybrid HyLiTE read count matrices used in the analysis of all representative systems in the associated research project are available [here](https://github.com/annabehling/DEA_and_fit/tree/master/all_count_matrices "all_count_matrices").
+In addition to the read count matrices provided for the above example, all parental and hybrid HyLiTE read count matrices used in the analysis of all representative systems in the associated research project are available [here](https://github.com/annabehling/DEA_and_fit/tree/master/all_count_matrices "all_count_matrices/").
 
 The `all_count_matrices/` folder contains one parental and two replicate hybrid count matrices for a representative system from each of:
 
