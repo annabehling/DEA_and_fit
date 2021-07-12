@@ -136,7 +136,7 @@ get_transgressives(exp_file_HH_p, sub_classes_df)
 
 In addition to the read count matrices provided for the above example, all parental and hybrid HyLiTE read count matrices used in the analysis of all representative systems in the associated research project are available [here](https://github.com/annabehling/DEA_and_fit/tree/master/all_count_matrices "all_count_matrices/").
 
-The `all_count_matrices/` folder contains one parental and two replicate hybrid count matrices for a representative system from each of:
+The `all_count_matrices/` folder contains one parental `*.expression.txt` and two replicate hybrid `*.read.summary.txt` count matrices for a representative system from each of:
 
 * **allopolyploid fungi** (file prefix 'allo_f')
 * **homoploid hybrid fungi** (file prefix 'HH_f')
