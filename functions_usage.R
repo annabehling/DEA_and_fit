@@ -164,7 +164,7 @@ sub_classes_df_allo_f <- get_nonNA(classes_df_allo_f)
 
 # reading in read count data
 hybrid_mod_hh_f <- hybrid_DE("~/Desktop/research/frozen_data/hylite/", "HH_f", include_N = TRUE, 
-                             parent_1 = "S_paradoxus", parent_2 = "HH_f") #hybrid
+                             parent_1 = "S_paradoxus", parent_2 = "S_cerevisiae") #hybrid
 
 exp_file_hh_f <- read_exp_file("~/Desktop/research/frozen_data/hylite/", "HH_f") #parent
 parent_mod_hh_f <- parental_DE(exp_file_hh_f, parent_1 = "S_paradoxus", parent_2 = "S_cerevisiae")
