@@ -145,7 +145,7 @@ The `all_count_matrices/` folder contains one parental `*.expression.txt` and tw
 * **allopolyploid animals** (file prefix 'allo_a')
 * **homoploid hybrid animals** (file prefix 'HH_a')
 
-More information about the raw genomic and RNA-seq data used to generate these read count matrices can be found [here].
+More information about the raw genomic and RNA-seq data used to generate these read count matrices can be found [here](https://github.com/annabehling/masters_supplementary "masters_supplementary").
 
 There is also a `functions_usage.R` file that contains the usage of the `functions.R` code on all of the additional available data in `all_count_matrices/`.
 
