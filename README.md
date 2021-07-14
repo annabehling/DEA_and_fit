@@ -4,11 +4,11 @@ Given the extent of variability in the genetic complements of species across Euk
 
 Briefly, these expression categories are:
 
-1. **Parental differential expression inheritance** (PEI de): a parental expression bias is maintained in the hybrid.
+1. **Parental differential expression inheritance** (PEI de) : a parental expression bias is maintained in the hybrid.
 2. **Parental equal expression inheritance** (PEI eq) : equal parental expression is inherited by the hybrid.
-3. **Homeolog expression blending** (HEBl): a parental expression bias is lost in the hybrid.
-4. **Homeolog expression bias** (HEBi): a hybrid expression bias has arisen from no parental bias.
-5. **Homeolog expression reversal** (HER): an expression bias in the parents is reversed in the hybrid.
+3. **Homeolog expression blending** (HEBl) : a parental expression bias is lost in the hybrid.
+4. **Homeolog expression bias** (HEBi) : a hybrid expression bias has arisen from no parental bias.
+5. **Homeolog expression reversal** (HER) : an expression bias in the parents is reversed in the hybrid.
 
 More information on these classes can be found in the following publications:
 
