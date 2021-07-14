@@ -12,7 +12,7 @@ Briefly, these expression categories are:
 
 More information on these classes can be found in the following publications:
 
-Cox, M.P., T. Dong, G. Shen, Y. Dalvi, D.B. Scott and A.R.D. Ganley. 2014. An interspecific fungal hybrid reveals cross-kingdom rules for allopolyploid gene expression patterns. *PLoS Genetics* 10: e1004180. [https://doi.org/10.1371/journal.pgen.1004180](https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1004180)
+Cox, M.P., T. Dong, G. Shen, Y. Dalvi, D.B. Scott and A.R.D. Ganley. 2014. An interspecific fungal hybrid reveals cross-kingdom rules for allopolyploid gene expression patterns. *PLOS Genetics* 10: e1004180. [https://doi.org/10.1371/journal.pgen.1004180](https://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1004180)
 
 Yoo, M.J., Szadkowski, E., & Wendel, J.F. 2013. Homeolog expression bias and expression level dominance in allopolyploid cotton. *Heredity* 110: 171-180. [https://doi.org/10.1038/hdy.2012.94](https://www.nature.com/articles/hdy201294)
 
