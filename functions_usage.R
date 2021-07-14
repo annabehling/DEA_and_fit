@@ -85,7 +85,7 @@ fit_and_classify <- function(mod, parent_1, parent_2, cutoff, min_p){
   data.frame(fit, parent_class)
 }
 
-# classify each gene to one of four gene expression categories
+# classify each gene into one of five gene expression categories
 gene_cats <- function(parent_fit, hybrid_fit, parent_1, parent_2, results_dir, species){
   #parent_fit : output of fit_and_classify() that was run on parental_DE()
   #hybrid_fit : output of fit_and_classify() that was run on hybrid_DE()
