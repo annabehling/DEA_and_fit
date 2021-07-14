@@ -31,10 +31,10 @@ get_transgressives <- function(exp_file, sub_classes_df){
   #exp_file : HyLiTE expression.txt file read in (df)
   #sub_classes_df : table of each non-NA gene with column of expression category for each gene (df)
   
-  #calculate mean read counts for p1 in col 8:9, p2 in col 10:11, hybrid in col 12:13
-  exp_file$mean_p1 <- rowMeans(exp_file[, c(8:9)], na.rm = TRUE)
-  exp_file$mean_p2 <- rowMeans(exp_file[, c(10:11)], na.rm = TRUE)
-  exp_file$mean_hy <- rowMeans(exp_file[, c(12:13)], na.rm = TRUE)
+  #calculate mean read counts for p1 in col 2:3, p2 in col 6:7, hybrid in col 4:5
+  exp_file$mean_p1 <- rowMeans(exp_file[, c(2:3)], na.rm = TRUE)
+  exp_file$mean_p2 <- rowMeans(exp_file[, c(6:7)], na.rm = TRUE)
+  exp_file$mean_hy <- rowMeans(exp_file[, c(4:5)], na.rm = TRUE)
   
   #determine genes with transgressive expression
   #transgressive = mean_hybrid > 2x highest mean_parent, or < 0.5x lowest mean_parent
